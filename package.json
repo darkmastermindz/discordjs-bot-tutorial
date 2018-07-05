@@ -1,0 +1,12 @@
+{
+  "name": "discordbot-tutorial",
+  "version": "1.0.0",
+  "description": "tutorial discord bot",
+  "main": "index.js",
+  "repository": "https://github.com/darkmastermindz/discordjs-tutorial.git",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "discord.js": "^11.3.2"
+  }
+}
