@@ -20,7 +20,7 @@ bot.on("message", async message => {
   let fargs = messageArray[0].slice(1); //first args
 
   //prevent regular messages from triggering bot
-  if(cmd.charAt(0) != `${prefix}` ) {
+  if(`${cmd}`.charAt(0) != `${prefix}` ) {
     return;
   }
 
@@ -82,14 +82,20 @@ bot.on("message", async message => {
         .addField("Time", message.createdAt)
         .addField("Reason", reason);
 
-        return message.channel.send(reportEmbed);
+        //return message.channel.send(reportEmbed); //send msg in current channel
+        let reportsChannel = message.guild.channels.find(`name`, "reports") //TODO: set reports channel
+        if(!reportsChannel) return message.channel.send("Couldn't find reports channel.");
 
-    default:
-    let botErr = new Discord.RichEmbed()
-      .setColor("#e60000")
-      .addField("Error: Command Not Found! ",
-        "Use **~help** to see a list of available commands");
-    return message.channel.send(botErr);
+        message.delete().catch(O_o=>{}); //delete previous message (input command)
+
+        return reportsChannel.send(reportEmbed);
+
+      default:
+        let botErr = new Discord.RichEmbed()
+          .setColor("#e60000")
+          .addField("Error: Command Not Found! ",
+            "Use **~help** to see a list of available commands");
+        return message.channel.send(botErr);
   }
 
 });
