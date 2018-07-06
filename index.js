@@ -1,4 +1,5 @@
 const botconfig = require("./botconfig.json");
+const token = require("./token.json"); // Create a json file with {value: yourToken}
 const Discord = require("discord.js");
 
 const bot = new Discord.Client({disableEveryone: true})
@@ -54,10 +55,11 @@ bot.on("message", async message => {
       .setColor("#e60000")
       .addField("Error: Command Not Found! ",
         "Use **~help** to see a list of available commands");
-
     return message.channel.send(boterr);
   }
 
+
+
 });
 
-bot.login(botconfig.token);
+bot.login(token.value);
