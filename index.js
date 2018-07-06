@@ -14,28 +14,42 @@ bot.on("message", async message => {
 
   let prefix = botconfig.prefix;
   let messageArray = message.content.split(" ");
+  console.log(messageArray);
   let cmd = messageArray[0];
-  let args = messageArray.slice(1);
-
+  let args = messageArray[0].slice(1);
+  console.log(args)
   // !say hello => cmd, hello
 
-  switch (cmd){
-    case `${prefix}botinfo`:
+  //prevent regular messages from triggering bot
+  if(cmd[0].charAt(0) != `${prefix}`) {
+    return;
+  }
+
+  switch (args){
+    case `help`:
+      return message.channel.send(
+        "Current commands: \n ~hello : Sends a response back");
+
+    case `botinfo`:
+      let boticon = bot.user.displayAvatarURL;
       let botembed = new Discord.RichEmbed()
-        .setDescription("Bot info")
+        .setDescription("Bot Info")
         .setColor("#15f153")
-        .addField("Bot Name", bot.user.username);
+        .setThumbnail(boticon)
+        .addField("Bot Name", bot.user.username)
+        .addField("Created On", bot.user.createdAt);
 
       return message.channel.send(botembed);
 
-    case `${prefix}help`:
-        return message.channel.send(
-          "Current commands: \n ~hello : Sends a response back");
+    case `hello`:
+      return message.channel.send("You Had Me at Hello World!");
 
-    case `${prefix}hello`:
-        return message.channel.send("You Had Me at Hello World!");
+    case `serverinfo`:
+      let servericon = message.guild.displayAvatarURL
+      return;
 
     default:
+
     let boterr = new Discord.RichEmbed()
       .setColor("#e60000")
       .addField("Error: Command Not Found! ",
