@@ -9,7 +9,7 @@
 ./token.json
 ```json
 {
-  value : yourtokenvaluehere
+  "value" : "yourtokenvaluehere"
 }
 ```
 
