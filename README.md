@@ -19,7 +19,7 @@ Built using Discord.js, Node.js, Express.js
 3. Run the following in terminal
 
 ```zsh
-node index.js
+[./discordjs-bot-tutorial$] node index.js
 ```
 
 ## Development... TODO:
