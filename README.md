@@ -1,5 +1,8 @@
 # discordjs-bot-tutorial
 
+Discord Bot with Asynchronously Modular commands used for Testing and Tutorial Purposes. 
+Built using Discord.js, Node.js, Express.js
+
 ## Getting Started
 
 1. Clone repository
@@ -18,3 +21,9 @@
 ```zsh
 node index.js
 ```
+
+## Development... TODO:
+-[ ] Express.js Routing
+-[ ] Discord Server Guild Factions
+-[ ] Natural Language Process Support/Help Channel
+-[ ] More Fun Games
