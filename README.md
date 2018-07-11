@@ -18,7 +18,7 @@ Built using Discord.js, Node.js, Express.js
 
 3. Run the following in terminal
 
-```zsh
+```bash
 $ node index.js
 ```
 
