@@ -19,11 +19,11 @@ Built using Discord.js, Node.js, Express.js
 3. Run the following in terminal
 
 ```zsh
-[./discordjs-bot-tutorial$] node index.js
+$ node index.js
 ```
 
 ## Development... TODO:
--[ ] Express.js Routing
--[ ] Discord Server Guild Factions
--[ ] Natural Language Process Support/Help Channel
--[ ] More Fun Games
+- [ ] Express.js Routing
+- [ ] Discord Server Guild Factions
+- [ ] Natural Language Process Support/Help Channel
+- [ ] More Fun Games
