@@ -56,7 +56,9 @@ bot.on("message", async message => {
         .addField("botinfo", "get bot info")
         .addField("serverinfo", "get bot info")
         .addField("report", "report a user")
-        .addField("report", "report a user");
+        .addField("kick","kick a user")
+        .addField("ban", "ban a user");
+
       return message.channel.send(helpEmbed);
 
     case `hello`:
